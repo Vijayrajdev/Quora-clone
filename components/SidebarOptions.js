@@ -1,5 +1,4 @@
 const SidebarOptions = () => {
-  
   const Sidebar = [
     {
       image:
@@ -45,9 +44,12 @@ const SidebarOptions = () => {
   return (
     <div className="flex flex-col  space-y-4 ">
       {Sidebar.map((options) => (
-        <div className="flex items-center hover:bg-slate-200 p-2 space-x-3 rounded-lg">
+        <div
+          className="flex items-center hover:bg-slate-200 p-2 space-x-3 rounded-lg"
+          key={options.title}
+        >
           <img className="image" src={options.image} alt="" />
-          <p className="text-gray-600 text-xs font-semibold">{options.title}</p>
+          <p className="text-gray-600 text-xs ">{options.title}</p>
         </div>
       ))}
     </div>

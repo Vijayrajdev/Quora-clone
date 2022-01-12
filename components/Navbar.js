@@ -17,9 +17,9 @@ import {
 
 const Navbar = () => {
   return (
-    <div className="flex items-center bg-white h-auto w-auto shadow-sm p-4">
+    <div className="flex items-center bg-white shadow p-4 sticky top-0 w-full z-50">
       <div className="flex items-center mx-auto space-x-10">
-        <div>
+        <div className="cursor-pointer">
           <img src="logo.svg" width={"120px"} alt="" srcset="" />
         </div>
         <div className="flex items-center space-x-10">
