@@ -1,8 +1,40 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { BsDot } from "react-icons/bs";
+import { auth, provider } from "../../pages/firebase";
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          console.log(auth);
+        }
+      })
+      .catch((err) => alert(err.message));
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+      })
+      .catch((err) => alert(err.message));
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div>
@@ -68,12 +100,16 @@ const Login = () => {
               <hr className="w-60 mb-2" />
               <h1 className="text-sm font-bold">Email</h1>
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 placeholder="Your email"
                 className=" p-2 w-60 rounded-md border border-gray-300 hover:border-blue-500 cursor-pointer outline-blue-400"
               />
               <h1 className="text-sm font-bold">Password</h1>
               <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 placeholder="Your password"
                 className=" p-2 w-60 rounded-md border border-gray-300 hover:border-blue-500 cursor-pointer outline-blue-400"
@@ -82,13 +118,21 @@ const Login = () => {
 
             <div className="flex items-center justify-between">
               <h1 className="text-sm text-gray-400 ">Forgot password?</h1>
-              <button className="text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded-3xl">
+              <button
+                className="text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded-3xl"
+                type="submit"
+                onClick={handleLogin}
+              >
                 Login
               </button>
             </div>
 
             <div className="flex items-center justify-center mt-3">
-              <button className="w-60 text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 py-2 rounded-md">
+              <button
+                className="w-60 text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 py-2 rounded-md"
+                type="submit"
+                onClick={handleRegister}
+              >
                 Register
               </button>
             </div>
