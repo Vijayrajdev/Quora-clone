@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["images.unsplash.com", "qsfs.fs.quoracdn.net"],
+    domains: ["qsf.fs.quoracdn.net"],
   },
 };

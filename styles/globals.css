@@ -13,6 +13,6 @@
       @apply h-7 rounded-lg
   }
   .widget {
-    @apply h-12 w-12 rounded-lg mr-5
+    @apply h-7 w-7 rounded-lg mr-5
   }
 }

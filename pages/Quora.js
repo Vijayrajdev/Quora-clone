@@ -9,12 +9,15 @@ const Quora = () => {
     <div>
       <div className="min-h-screen bg-slate-100">
         <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
+          <title>Quora</title>
+          <link
+            rel="icon"
+            href="https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.favicon-new.ico-26-e7e93fe0a7fbc991.ico"
+          />
         </Head>
         <Navbar />
         <div className="h-screen overflow-hidden">
-          <main className="flex space-x-7">
+          <main className="flex space-x-7 mx-32">
             <Sidebar />
             <Feed />
             <Widget />

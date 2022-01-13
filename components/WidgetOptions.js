@@ -45,9 +45,9 @@ const WidgetOptions = () => {
     <div>
       {Widget.map((item) => (
         <div>
-          <div className="flex space-x-2 hover:bg-gray-100 p-4 rounded-md">
+          <div className="flex space-x-1 hover:bg-gray-100 p-2 rounded-md">
             <img src={item.image} className="widget" />
-            <div className="space-y-2">
+            <div className="space-y-1">
               <h1 className="text-sm">{item.title}</h1>
               <h3 className="text-xs text-gray-500">{item.descrption}</h3>
             </div>

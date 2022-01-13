@@ -3,7 +3,7 @@ import { RiCompassDiscoverLine } from "react-icons/ri";
 import SidebarOptions from "./SidebarOptions";
 const Sidebar = () => {
   return (
-    <div className="ml-10 h-screen overflow-y-scroll scrollbar-hide pb-36">
+    <div className="h-screen overflow-y-scroll scrollbar-hide pb-36">
       <div className="space-y-4">
         <div className="flex items-center p-2 space-x-3 bg-gray-200 rounded-lg mt-6 hover:bg-slate-200">
           <PlusCircleIcon className="h-7 w-7 text-gray-500" />

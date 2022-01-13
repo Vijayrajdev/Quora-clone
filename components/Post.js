@@ -14,7 +14,7 @@ const Post = () => {
         </div>
         <div className="flex items-center justify-between mb-4">
           <h3>What's your question?</h3>
-          <Button borderRadius={"3xl"} colorScheme={"red"}>
+          <Button borderRadius={"3xl"} colorScheme={"red"} size={"sm"}>
             Answer
           </Button>
         </div>
