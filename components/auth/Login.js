@@ -9,6 +9,10 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const signIn = () => {
+    auth.signInWithPopup(provider).catch((err) => alert(err.message));
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
     auth
@@ -70,25 +74,28 @@ const Login = () => {
 
         <div className="flex mt-4">
           <div className="flex flex-col space-y-2 border-r pr-10">
-            <button className="flex items-center w-60 space-x-2 border border-gray-300 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+            <button
+              className="flex items-center w-72 space-x-2 border border-gray-300 p-2 rounded-md hover:bg-gray-100 cursor-pointer"
+              onClick={signIn}
+            >
               <img src="Google.svg" alt="" />
               <h1 className="text-sm">Continue with Google</h1>
             </button>
 
-            <button className="flex items-center w-60 space-x-2 border border-gray-300 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+            <button className="flex items-center w-72 space-x-2 border border-gray-300 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
               <img src="Facebook.svg" alt="" />
               <h1 className="text-sm">Continue with Facebook</h1>
             </button>
 
-            <button className="flex items-center justify-center w-60 space-x-2 p-1 rounded-3xl hover:bg-gray-100 cursor-pointer">
+            <button className="flex items-center justify-center w-72 space-x-2 p-1 rounded-3xl hover:bg-gray-100 cursor-pointer">
               <h1 className="text-xs font-semibold text-gray-600">
                 Sign up with email
               </h1>
             </button>
 
-            <hr className="w-60" />
+            <hr className="w-72" />
 
-            <h1 className="w-60 text-xs text-gray-500">
+            <h1 className="w-72 text-xs text-gray-500">
               By continuing you indicate that you agree to Quora’s Terms of
               Service and Privacy Policy.
             </h1>
@@ -97,14 +104,14 @@ const Login = () => {
           <div className="flex flex-col pl-10">
             <div className="flex flex-col space-y-3 mb-3">
               <h1 className="font-semibold">Login</h1>
-              <hr className="w-60 mb-2" />
+              <hr className="w-72 mb-2" />
               <h1 className="text-sm font-bold">Email</h1>
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 placeholder="Your email"
-                className=" p-2 w-60 rounded-md border border-gray-300 hover:border-blue-500 cursor-pointer outline-blue-400"
+                className=" p-2 w-72 rounded-md border border-gray-300 hover:border-blue-500 cursor-pointer outline-blue-400"
               />
               <h1 className="text-sm font-bold">Password</h1>
               <input
@@ -112,7 +119,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 placeholder="Your password"
-                className=" p-2 w-60 rounded-md border border-gray-300 hover:border-blue-500 cursor-pointer outline-blue-400"
+                className=" p-2 w-72 rounded-md border border-gray-300 hover:border-blue-500 cursor-pointer outline-blue-400"
               />
             </div>
 
@@ -129,7 +136,7 @@ const Login = () => {
 
             <div className="flex items-center justify-center mt-3">
               <button
-                className="w-60 text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 py-2 rounded-md"
+                className="w-72 text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 py-2 rounded-md"
                 type="submit"
                 onClick={handleRegister}
               >
